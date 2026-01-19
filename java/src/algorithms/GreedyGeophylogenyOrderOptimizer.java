@@ -33,7 +33,7 @@ public class GreedyGeophylogenyOrderOptimizer extends GeophylogenyOrderer {
 			totalImprovement += improvement;
 		} while (improvement > 0);
 
-		System.out.println("total improvement: " + totalImprovement);
+		// System.out.println("total improvement: " + totalImprovement); # the "+": how much can a greedy hill climbing improve?
 	}
 
 	/**

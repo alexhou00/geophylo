@@ -70,19 +70,12 @@ public class GeophylogenyInstanceCreater {
 	 * Generates a new geophylogeny with given number of sites/taxa, where the
 	 * sites are clustered and placed randomly around randomly placed cluster
 	 * centres.
-	 * 
-	 * @param mapWidth
-	 *            width of the map of the new geophylogeny
-	 * @param mapHeight
-	 *            height of the map of the new geophylogeny
-	 * @param numTaxa
-	 *            number of taxa and sites of the new geophylogeny
-	 * @param numClusters
-	 *            number of clusters of the new geophylogeny
-	 * @param instanceName
-	 *            name for the new geophylogeny
-	 * @param seed
-	 *            seed for the random number generator
+	 *
+	 * @param mapWidth     width of the map of the new geophylogeny
+	 * @param mapHeight    height of the map of the new geophylogeny
+	 * @param numTaxa      number of taxa and sites of the new geophylogeny
+	 * @param instanceName name for the new geophylogeny
+	 * @param seed         seed for the random number generator
 	 * @return a new geophylogeny with sites randomly placed in clusters
 	 */
 	public static Geophylogeny generateClusteredInstance(int mapWidth, int mapHeight, int numTaxa,
