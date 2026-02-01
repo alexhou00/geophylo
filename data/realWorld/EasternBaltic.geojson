@@ -1,0 +1,77 @@
+{
+  "type": "FeatureCollection",
+  "properties": {
+    "layer": "east2280"
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "icon": "data:image/svg+xml;base64,PHN2ZyAgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIgogICAgICB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgaGVpZ2h0PSI0MCIgd2lkdGg9IjQwIj4KICA8Y2lyY2xlIGN4PSIyMCIgY3k9IjIwIiByPSIxNCIgc3R5bGU9ImZpbGw6I0ZGMDAwMDtzdHJva2U6YmxhY2s7c3Ryb2tlLXdpZHRoOjFweDtzdHJva2UtbGluZWNhcDpyb3VuZDtzdHJva2UtbGluZWpvaW46cm91bmQ7Ii8+Cjwvc3ZnPg==",
+        "branch": 6959,
+        "language": {
+          "pk": 6959,
+          "name": "Latvian",
+          "longitude": 24.309118,
+          "latitude": 56.826108,
+          "id": "latv1249"
+        },
+        "name": "Latvian"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          24.309118,
+          56.826108
+        ]
+      },
+      "id": "latv1249"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "icon": "data:image/svg+xml;base64,PHN2ZyAgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIgogICAgICB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgaGVpZ2h0PSI0MCIgd2lkdGg9IjQwIj4KICA8Y2lyY2xlIGN4PSIyMCIgY3k9IjIwIiByPSIxNCIgc3R5bGU9ImZpbGw6I0ZGMDAwMDtzdHJva2U6YmxhY2s7c3Ryb2tlLXdpZHRoOjFweDtzdHJva2UtbGluZWNhcDpyb3VuZDtzdHJva2UtbGluZWpvaW46cm91bmQ7Ii8+Cjwvc3ZnPg==",
+        "branch": 6959,
+        "language": {
+          "pk": 6959,
+          "name": "Standard Latvian",
+          "longitude": 24,
+          "latitude": 57,
+          "id": "stan1325"
+        },
+        "name": "Standard Latvian"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          24,
+          57
+        ]
+      },
+      "id": "stan1325"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "icon": "data:image/svg+xml;base64,PHN2ZyAgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIgogICAgICB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgaGVpZ2h0PSI0MCIgd2lkdGg9IjQwIj4KICA8Y2lyY2xlIGN4PSIyMCIgY3k9IjIwIiByPSIxNCIgc3R5bGU9ImZpbGw6I0ZGRkYwMDtzdHJva2U6YmxhY2s7c3Ryb2tlLXdpZHRoOjFweDtzdHJva2UtbGluZWNhcDpyb3VuZDtzdHJva2UtbGluZWpvaW46cm91bmQ7Ii8+Cjwvc3ZnPg==",
+        "branch": 6958,
+        "language": {
+          "pk": 6958,
+          "name": "Lithuanian",
+          "longitude": 23.9601,
+          "latitude": 55.1429,
+          "id": "lith1251"
+        },
+        "name": "Lithuanian"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          23.9601,
+          55.1429
+        ]
+      },
+      "id": "lith1251"
+    }
+  ]
+}

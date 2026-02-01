@@ -1,0 +1,6 @@
+#NEXUS
+
+BEGIN TREES;
+    [Tree extracted from Glottolog data: Eastern Baltic Subtree]
+    TREE Eastern_Baltic = ((('Curonian [curo1234]':1,'East Latvian [east2282][ltg]':1,('Standard Latvian [stan1325][lvs]':1,'Tamian [tami1283]':1)'Low Latvian [lowl1274]':1,'Zemgalian [zemg1234][xzm]':1)'Latvian [latv1249][lav]-l-':1,(('Dzukish [dzuk1239]':1,'East Aukštaitian [east2281]':1,'Suvalkietiskai [suva1238]':1)'Aukshtaitish [auks1239]':1,'Old Lithuanian [oldl1240][olt]':1,('North Samogitian [nort2613]':1,'South Samogitian [sout2619]':1,'West Samogitian [west2347]':1)'Samogitian [samo1265][sgs]':1)'Lithuanian [lith1251][lit]-l-':1);
+END;
