@@ -1,5 +1,6 @@
 package experiments;
 
+import java.io.File;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.Random;
@@ -14,6 +15,9 @@ import io.GeophylogenyIO;
 import model.Geophylogeny;
 import model.Leader;
 import model.Leader.GeophylogenyLeaderType;
+import model.Site;
+import model.Tree;
+import model.Vertex;
 
 /**
  * This class provides a method to test the heuristics on generated examples and
@@ -44,7 +48,7 @@ public class GeophylogenyExperimenter {
 	private static final ExperimentType EXPERIMENT_TYPE = ExperimentType.REAL_WORLD_INSTANCE;
 	private static final GenerateType GENERATE_TYPE = GenerateType.CLUSTERED;
 
-	private static final String FILE_PATH = "D:\\Alex\\TUM\\Seminar\\geophylo\\output_serious\\";
+	private static final String FILE_PATH = "D:\\Alex\\TUM\\Seminar\\geophylo\\output_new\\";
     private static final String FILE_INPUT_PATH = "D:\\Alex\\TUM\\Seminar\\geophylo\\data/realWorld/";
 	private static final String FILE_RW_FROGS = "rwExampleShrubFrogs.json";
 	private static final String FILE_RW_FISH = "rwExampleFish.json";
@@ -67,6 +71,18 @@ public class GeophylogenyExperimenter {
 	private static final StringBuilder euclideanP = new StringBuilder(String.format("%-17s", "euclidean+: "));
 	private static final StringBuilder horizontalP = new StringBuilder(String.format("%-17s", "horizontal+: "));
 	private static final StringBuilder hopP = new StringBuilder(String.format("%-17s", "hop+: "));
+
+	private static class BestDrawing {
+		private final Geophylogeny geophylogeny;
+		private final int crossings;
+		private final String filename;
+
+		private BestDrawing(Geophylogeny geophylogeny, int crossings, String filename) {
+			this.geophylogeny = geophylogeny;
+			this.crossings = crossings;
+			this.filename = filename;
+		}
+	}
 
 	public static void main(String[] args) {
 
@@ -108,7 +124,7 @@ public class GeophylogenyExperimenter {
 					// GeophylogenyIO.writeGeophylogenyToJSON(geophylo, FILE_PATH +
 					// name + ".json");
 
-					runExperimentOnInstance(geophylo, name);
+					runExperimentOnInstance(geophylo, name, false);
 				}
 			}
 		} else if (EXPERIMENT_TYPE == ExperimentType.REAL_WORLD_INSTANCE) {
@@ -121,6 +137,7 @@ public class GeophylogenyExperimenter {
 				double rwScale = rwScales[i];
 
 				Random seedGenerator = new Random(rwFile.hashCode());
+				BestDrawing bestForInstance = null;
 
 				for (int j = 0; j < REPEATS; j++) {
 					long seed = seedGenerator.nextLong();
@@ -132,7 +149,14 @@ public class GeophylogenyExperimenter {
 							LEADER_TYPE.toString().toLowerCase();
 					size.append(geophylo.getSites().length).append(", ");
 
-					runExperimentOnInstance(geophylo, name);
+					BestDrawing bestForRun = runExperimentOnInstance(geophylo, name, true);
+					if (bestForRun != null && (bestForInstance == null || bestForRun.crossings < bestForInstance.crossings)) {
+						bestForInstance = bestForRun;
+					}
+				}
+
+				if (bestForInstance != null) {
+					saveDrawing(bestForInstance.geophylogeny, bestForInstance.filename);
 				}
 			}
 		}
@@ -152,71 +176,170 @@ public class GeophylogenyExperimenter {
 		System.out.println(hopP);
 	}
 
-	private static void runExperimentOnInstance(Geophylogeny geophylo, String name) {
+	private static BestDrawing runExperimentOnInstance(Geophylogeny geophylo, String name, boolean trackBest) {
 		GeophylogenyOrderer optimizer = new GreedyGeophylogenyOrderOptimizer(geophylo);
+		BestDrawing best = null;
+		int crossings;
 
 		// 1. Optimizer Only (Greedy Hill Climbing)
 		// Hill climbing: 只看當下周圍的一小步範圍，如果某個方向會更好 (如減少 crossings)，就往那邊走一步
 		optimizer.orderLeaves();
-		optimizerOnly.append(geophylo.computeNumberOfCrossings()).append(", ");
+		crossings = geophylo.computeNumberOfCrossings();
+		optimizerOnly.append(crossings).append(", ");
+		best = updateBest(best, geophylo, crossings, name + "-optimizerOnly", trackBest);
 		// saveDrawing(geophylo, name + "-optimizerOnly");
 
 		// 2. TopDown
 		GeophylogenyOrderer ordered = new TopDownGeophylogenyOrderer(geophylo);
 		ordered.orderLeaves();
-		topDown.append(geophylo.computeNumberOfCrossings()).append(", ");
+		crossings = geophylo.computeNumberOfCrossings();
+		topDown.append(crossings).append(", ");
+		best = updateBest(best, geophylo, crossings, name + "-topDown", trackBest);
 		// saveDrawing(geophylo, name + "-topDown");
 
 		optimizer.orderLeaves();
-		topDownP.append(geophylo.computeNumberOfCrossings()).append(", ");
+		crossings = geophylo.computeNumberOfCrossings();
+		topDownP.append(crossings).append(", ");
+		best = updateBest(best, geophylo, crossings, name + "-topDownPlus", trackBest);
 		// saveDrawing(geophylo, name + "-topDownPlus");
 
 		// 3. BottomUp (DP Crossings)
 		ordered = new DPGeophylogenyOrderer(geophylo, DPStrategy.Crossings);
 		ordered.orderLeaves();
-		bottomUp.append(geophylo.computeNumberOfCrossings()).append(", ");
+		crossings = geophylo.computeNumberOfCrossings();
+		bottomUp.append(crossings).append(", ");
+		best = updateBest(best, geophylo, crossings, name + "-bottomUp", trackBest);
 		// saveDrawing(geophylo, name + "-bottomUp");
 
 		optimizer.orderLeaves();
-		bottomUpP.append(geophylo.computeNumberOfCrossings()).append(", ");
+		crossings = geophylo.computeNumberOfCrossings();
+		bottomUpP.append(crossings).append(", ");
+		best = updateBest(best, geophylo, crossings, name + "-bottomUpPlus", trackBest);
 		// saveDrawing(geophylo, name + "-bottomUpPlus");
 
 		// 4. Quality Measure: Euclidean (also DP)
 		ordered = new DPGeophylogenyOrderer(geophylo, DPStrategy.EuclideanDistance);
 		ordered.orderLeaves();
-		euclidean.append(geophylo.computeNumberOfCrossings()).append(", ");
+		crossings = geophylo.computeNumberOfCrossings();
+		euclidean.append(crossings).append(", ");
+		best = updateBest(best, geophylo, crossings, name + "-euclidean", trackBest);
 		// saveDrawing(geophylo, name + "-euclidean");
 
 		optimizer.orderLeaves();
-		euclideanP.append(geophylo.computeNumberOfCrossings()).append(", ");
+		crossings = geophylo.computeNumberOfCrossings();
+		euclideanP.append(crossings).append(", ");
+		best = updateBest(best, geophylo, crossings, name + "-euclideanPlus", trackBest);
 		// saveDrawing(geophylo, name + "-euclideanPlus");
 
 		// 5. Quality Measure: Horizontal (XOffset) (also DP)
 		ordered = new DPGeophylogenyOrderer(geophylo, DPStrategy.HorizontalDistance);
 		ordered.orderLeaves();
-		horizontal.append(geophylo.computeNumberOfCrossings()).append(", ");
+		crossings = geophylo.computeNumberOfCrossings();
+		horizontal.append(crossings).append(", ");
+		best = updateBest(best, geophylo, crossings, name + "-horizontal", trackBest);
 		// saveDrawing(geophylo, name + "-horizontal");
 
 		optimizer.orderLeaves();
-		horizontalP.append(geophylo.computeNumberOfCrossings()).append(", ");
+		crossings = geophylo.computeNumberOfCrossings();
+		horizontalP.append(crossings).append(", ");
+		best = updateBest(best, geophylo, crossings, name + "-horizontalPlus", trackBest);
 		// saveDrawing(geophylo, name + "-horizontalPlus");
 
 		// 6. Quality Measure: Hop (IndexOffset) (also DP)
 		ordered = new DPGeophylogenyOrderer(geophylo, DPStrategy.Hops);
 		ordered.orderLeaves();
-		hop.append(geophylo.computeNumberOfCrossings()).append(", ");
+		crossings = geophylo.computeNumberOfCrossings();
+		hop.append(crossings).append(", ");
+		best = updateBest(best, geophylo, crossings, name + "-hop", trackBest);
 		// saveDrawing(geophylo, name + "-hop");
 
 		optimizer.orderLeaves();
-		hopP.append(geophylo.computeNumberOfCrossings()).append(", ");
-		saveDrawing(geophylo, name + "-hopPlus");
+		crossings = geophylo.computeNumberOfCrossings();
+		hopP.append(crossings).append(", ");
+		best = updateBest(best, geophylo, crossings, name + "-hopPlus", trackBest);
+
+		return best;
 	}
 
 	private static void saveDrawing(Geophylogeny geophylo, String filename) {
+		ensureOutputDir();
 		geophylo.computeXCoordinates();
 		GeophylogenyDrawer drawer = new GeophylogenyDrawer(geophylo, FILE_PATH + filename + "-" + getFormattedTimeNow() + ".svg");
 		drawer.drawGeophylogeny();
 		// System.out.println("Drawing saved to: " + FILE_PATH + filename + ".svg");
+	}
+
+	private static void ensureOutputDir() {
+		File outputDir = new File(FILE_PATH);
+		if (!outputDir.exists()) {
+			outputDir.mkdirs();
+		}
+	}
+
+	private static BestDrawing updateBest(BestDrawing currentBest, Geophylogeny geophylo, int crossings, String filename, boolean trackBest) {
+		if (!trackBest) {
+			return currentBest;
+		}
+		if (currentBest == null || crossings < currentBest.crossings) {
+			return new BestDrawing(cloneGeophylogeny(geophylo), crossings, filename);
+		}
+		return currentBest;
+	}
+
+	private static Geophylogeny cloneGeophylogeny(Geophylogeny original) {
+		Tree originalTree = original.getTree();
+		Vertex rootCopy = copyVertex(originalTree.getRoot());
+		Tree treeCopy = new Tree(rootCopy, originalTree.getNumberOfLeaves(), originalTree.getStateNumber());
+		treeCopy.setName(originalTree.getName());
+
+		Site[] originalSites = original.getSites();
+		Site[] sitesCopy = new Site[originalSites.length];
+		for (int i = 0; i < originalSites.length; i++) {
+			Site originalSite = originalSites[i];
+			Site siteCopy = new Site(originalSite.getX(), originalSite.getY());
+			siteCopy.setCluster(originalSite.getCluster());
+			sitesCopy[i] = siteCopy;
+		}
+
+		Vertex[] leaves = treeCopy.getLeavesInIndexOrder();
+		for (int i = 0; i < leaves.length; i++) {
+			sitesCopy[i].setLeaf(leaves[i]);
+		}
+
+		Geophylogeny copy = new Geophylogeny(treeCopy, sitesCopy, original.getMapWidth(), original.getMapHeight(), original.getName(), original.getLeaderType());
+		if (original.hasClusters()) {
+			Vertex[] originalLeaves = originalTree.getLeavesInIndexOrder();
+			int[] clusterOfLeaf = new int[originalLeaves.length];
+			for (int i = 0; i < originalLeaves.length; i++) {
+				clusterOfLeaf[i] = original.getClusterOfVertex(originalLeaves[i]);
+			}
+			copy.setClustersByMapping(clusterOfLeaf);
+		}
+
+		return copy;
+	}
+
+	private static Vertex copyVertex(Vertex original) {
+		Vertex copy;
+		if (original.isLeaf()) {
+			copy = new Vertex(original.getID());
+		} else {
+			Vertex leftCopy = copyVertex(original.getLeftChild());
+			Vertex rightCopy = copyVertex(original.getRightChild());
+			copy = new Vertex(original.getID(), leftCopy, rightCopy);
+		}
+
+		copy.setTaxonName(original.getTaxonName());
+		copy.setBranchLengthIncoming(original.getBranchLengthIncoming());
+		copy.setPopulationSize(original.getPopulationSize());
+		copy.setDiscreteDepth(original.getDiscreteDepth());
+		copy.setDepth(original.getDepth());
+		copy.setHeight(original.getHeight());
+		if (original.isFixed()) {
+			copy.setFixed();
+		}
+
+		return copy;
 	}
 
 	private static String getFormattedTimeNow() {
