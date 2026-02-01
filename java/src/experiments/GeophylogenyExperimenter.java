@@ -42,7 +42,7 @@ public class GeophylogenyExperimenter {
 	private static final GeophylogenyLeaderType LEADER_TYPE = GeophylogenyLeaderType.S;
 
 	private static final ExperimentType EXPERIMENT_TYPE = ExperimentType.GENERATED_INSTANCE;
-	private static final GenerateType GENERATE_TYPE = GenerateType.COASTLINE;
+	private static final GenerateType GENERATE_TYPE = GenerateType.CLUSTERED;
 
 	private static final String FILE_PATH = "D:\\Alex\\TUM\\Seminar\\geophylo\\output_serious\\";
     private static final String FILE_INPUT_PATH = "D:\\Alex\\TUM\\Seminar\\geophylo\\data/realWorld/";
@@ -89,7 +89,8 @@ public class GeophylogenyExperimenter {
 
 					/* Use generated instance */
 					String name = GENERATE_TYPE.toString().toLowerCase() +
-							"-n" + i + "-r" + j + "-s" + seed + "-d"
+							"-n" + i + "-r" + j + "-s" + seed +
+							"-" + LEADER_TYPE.toString().toLowerCase() + "-d"
 							+ GeophylogenyInstanceCreater.EXPONENT;
 
 					switch (GENERATE_TYPE) {
@@ -125,7 +126,8 @@ public class GeophylogenyExperimenter {
 					Geophylogeny geophylo = GeophylogenyIO.readGeophylogenyFromJSON(FILE_INPUT_PATH + rwFile);
 					geophylo.scale(rwScale);
 					geophylo.setLeaderType(LEADER_TYPE);
-					String name = rwFile.replace(".json", "") + "-r" + j;
+					String name = rwFile.replace(".json", "") + "-r" + j + "-" +
+							LEADER_TYPE.toString().toLowerCase();
 					size.append(geophylo.getSites().length).append(", ");
 
 					runExperimentOnInstance(geophylo, name);
