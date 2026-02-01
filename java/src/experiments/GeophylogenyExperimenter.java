@@ -41,7 +41,7 @@ public class GeophylogenyExperimenter {
 	private static final int REPEATS = 10;
 	private static final GeophylogenyLeaderType LEADER_TYPE = GeophylogenyLeaderType.S;
 
-	private static final ExperimentType EXPERIMENT_TYPE = ExperimentType.GENERATED_INSTANCE;
+	private static final ExperimentType EXPERIMENT_TYPE = ExperimentType.REAL_WORLD_INSTANCE;
 	private static final GenerateType GENERATE_TYPE = GenerateType.CLUSTERED;
 
 	private static final String FILE_PATH = "D:\\Alex\\TUM\\Seminar\\geophylo\\output_serious\\";
@@ -112,8 +112,10 @@ public class GeophylogenyExperimenter {
 				}
 			}
 		} else if (EXPERIMENT_TYPE == ExperimentType.REAL_WORLD_INSTANCE) {
-			String[] rwFiles = { FILE_RW_FISH, FILE_RW_LIZARD, FILE_RW_FROGS };
-			double[] rwScales = { RW_SCALE_FISH, RW_SCALE_LIZARD, RW_SCALE_FROGS };
+			//String[] rwFiles = { FILE_RW_FISH, FILE_RW_LIZARD, FILE_RW_FROGS, "EasternBaltic.json"};
+			//double[] rwScales = { RW_SCALE_FISH, RW_SCALE_LIZARD, RW_SCALE_FROGS, 1 };
+			String[] rwFiles = { "Balto-Slavic.json", "Formosan.json"};
+			double[] rwScales = {1, 1};
 			for (int i = 0; i < rwFiles.length; i++) {
 				String rwFile = rwFiles[i];
 				double rwScale = rwScales[i];
