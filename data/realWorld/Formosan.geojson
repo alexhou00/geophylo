@@ -1,0 +1,537 @@
+{
+  "type": "FeatureCollection",
+  "properties": {
+    "layer": "aust1307"
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "icon": "data:image/svg+xml;base64,PHN2ZyAgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIgogICAgICB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgaGVpZ2h0PSI0MCIgd2lkdGg9IjQwIj4KICA8cGF0aCBkPSJNOCA4IEgzMiBWMzIgSDggVjgiIHN0eWxlPSJmaWxsOiNGRkZGMDA7c3Ryb2tlOmJsYWNrO3N0cm9rZS13aWR0aDoxcHg7c3Ryb2tlLWxpbmVjYXA6cm91bmQ7c3Ryb2tlLWxpbmVqb2luOnJvdW5kOyIvPgo8L3N2Zz4=",
+        "branch": 1772,
+        "language": {
+          "pk": 1772,
+          "name": "Tsou",
+          "longitude": 120.787,
+          "latitude": 23.216,
+          "id": "tsou1248"
+        },
+        "name": "Tsou"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.787,
+          23.216
+        ]
+      },
+      "id": "tsou1248"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "icon": "data:image/svg+xml;base64,PHN2ZyAgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIgogICAgICB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgaGVpZ2h0PSI0MCIgd2lkdGg9IjQwIj4KICA8cGF0aCBkPSJNOCA4IEgzMiBWMzIgSDggVjgiIHN0eWxlPSJmaWxsOiNGRkZGMDA7c3Ryb2tlOmJsYWNrO3N0cm9rZS13aWR0aDoxcHg7c3Ryb2tlLWxpbmVjYXA6cm91bmQ7c3Ryb2tlLWxpbmVqb2luOnJvdW5kOyIvPgo8L3N2Zz4=",
+        "branch": 1772,
+        "language": {
+          "pk": 1772,
+          "name": "Saaroa",
+          "longitude": 120.711,
+          "latitude": 23.2632,
+          "id": "saar1237"
+        },
+        "name": "Saaroa"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.711,
+          23.2632
+        ]
+      },
+      "id": "saar1237"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "icon": "data:image/svg+xml;base64,PHN2ZyAgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIgogICAgICB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgaGVpZ2h0PSI0MCIgd2lkdGg9IjQwIj4KICA8cGF0aCBkPSJNOCA4IEgzMiBWMzIgSDggVjgiIHN0eWxlPSJmaWxsOiNGRkZGMDA7c3Ryb2tlOmJsYWNrO3N0cm9rZS13aWR0aDoxcHg7c3Ryb2tlLWxpbmVjYXA6cm91bmQ7c3Ryb2tlLWxpbmVqb2luOnJvdW5kOyIvPgo8L3N2Zz4=",
+        "branch": 1772,
+        "language": {
+          "pk": 1772,
+          "name": "Kanakanavu",
+          "longitude": 120.887,
+          "latitude": 23.3235,
+          "id": "kana1286"
+        },
+        "name": "Kanakanavu"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.887,
+          23.3235
+        ]
+      },
+      "id": "kana1286"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "icon": "data:image/svg+xml;base64,PHN2ZyAgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIgogICAgICB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgaGVpZ2h0PSI0MCIgd2lkdGg9IjQwIj4KICA8Y2lyY2xlIGN4PSIyMCIgY3k9IjIwIiByPSIxNCIgc3R5bGU9ImZpbGw6I0ZGRkYwMDtzdHJva2U6YmxhY2s7c3Ryb2tlLXdpZHRoOjFweDtzdHJva2UtbGluZWNhcDpyb3VuZDtzdHJva2UtbGluZWpvaW46cm91bmQ7Ii8+Cjwvc3ZnPg==",
+        "branch": 1775,
+        "language": {
+          "pk": 1775,
+          "name": "Bunun",
+          "longitude": 121.025,
+          "latitude": 23.4116,
+          "id": "bunu1267"
+        },
+        "name": "Bunun"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.025,
+          23.4116
+        ]
+      },
+      "id": "bunu1267"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "icon": "data:image/svg+xml;base64,PHN2ZyAgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIgogICAgICB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgaGVpZ2h0PSI0MCIgd2lkdGg9IjQwIj4KICA8Y2lyY2xlIGN4PSIyMCIgY3k9IjIwIiByPSIxNCIgc3R5bGU9ImZpbGw6IzAwRkZGRjtzdHJva2U6YmxhY2s7c3Ryb2tlLXdpZHRoOjFweDtzdHJva2UtbGluZWNhcDpyb3VuZDtzdHJva2UtbGluZWpvaW46cm91bmQ7Ii8+Cjwvc3ZnPg==",
+        "branch": 1770,
+        "language": {
+          "pk": 1770,
+          "name": "Saisiyat",
+          "longitude": 121.067,
+          "latitude": 24.6043,
+          "id": "sais1237"
+        },
+        "name": "Saisiyat"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.067,
+          24.6043
+        ]
+      },
+      "id": "sais1237"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "icon": "data:image/svg+xml;base64,PHN2ZyAgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIgogICAgICB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgaGVpZ2h0PSI0MCIgd2lkdGg9IjQwIj4KICA8Y2lyY2xlIGN4PSIyMCIgY3k9IjIwIiByPSIxNCIgc3R5bGU9ImZpbGw6IzAwRkZGRjtzdHJva2U6YmxhY2s7c3Ryb2tlLXdpZHRoOjFweDtzdHJva2UtbGluZWNhcDpyb3VuZDtzdHJva2UtbGluZWpvaW46cm91bmQ7Ii8+Cjwvc3ZnPg==",
+        "branch": 1770,
+        "language": {
+          "pk": 1770,
+          "name": "Kulon",
+          "longitude": 121.32473,
+          "latitude": 25.00238,
+          "id": "kulo1238"
+        },
+        "name": "Kulon"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.32473,
+          25.00238
+        ]
+      },
+      "id": "kulo1238"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "icon": "data:image/svg+xml;base64,PHN2ZyAgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIgogICAgICB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgaGVpZ2h0PSI0MCIgd2lkdGg9IjQwIj4KICA8Y2lyY2xlIGN4PSIyMCIgY3k9IjIwIiByPSIxNCIgc3R5bGU9ImZpbGw6IzAwRkZGRjtzdHJva2U6YmxhY2s7c3Ryb2tlLXdpZHRoOjFweDtzdHJva2UtbGluZWNhcDpyb3VuZDtzdHJva2UtbGluZWpvaW46cm91bmQ7Ii8+Cjwvc3ZnPg==",
+        "branch": 1770,
+        "language": {
+          "pk": 1770,
+          "name": "Pazeh-Kahabu",
+          "longitude": 120.976,
+          "latitude": 23.7562,
+          "id": "kulo1237"
+        },
+        "name": "Pazeh-Kahabu"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.976,
+          23.7562
+        ]
+      },
+      "id": "kulo1237"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "icon": "data:image/svg+xml;base64,PHN2ZyAgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIgogICAgICB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgaGVpZ2h0PSI0MCIgd2lkdGg9IjQwIj4KICA8Y2lyY2xlIGN4PSIyMCIgY3k9IjIwIiByPSIxNCIgc3R5bGU9ImZpbGw6I0ZGMDAwMDtzdHJva2U6YmxhY2s7c3Ryb2tlLXdpZHRoOjFweDtzdHJva2UtbGluZWNhcDpyb3VuZDtzdHJva2UtbGluZWpvaW46cm91bmQ7Ii8+Cjwvc3ZnPg==",
+        "branch": 1776,
+        "language": {
+          "pk": 1776,
+          "name": "Atayal",
+          "longitude": 121.388,
+          "latitude": 24.5209,
+          "id": "atay1247"
+        },
+        "name": "Atayal"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.388,
+          24.5209
+        ]
+      },
+      "id": "atay1247"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "icon": "data:image/svg+xml;base64,PHN2ZyAgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIgogICAgICB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgaGVpZ2h0PSI0MCIgd2lkdGg9IjQwIj4KICA8Y2lyY2xlIGN4PSIyMCIgY3k9IjIwIiByPSIxNCIgc3R5bGU9ImZpbGw6I0ZGMDAwMDtzdHJva2U6YmxhY2s7c3Ryb2tlLXdpZHRoOjFweDtzdHJva2UtbGluZWNhcDpyb3VuZDtzdHJva2UtbGluZWpvaW46cm91bmQ7Ii8+Cjwvc3ZnPg==",
+        "branch": 1776,
+        "language": {
+          "pk": 1776,
+          "name": "Seediq",
+          "longitude": 121.358,
+          "latitude": 23.9032,
+          "id": "taro1264"
+        },
+        "name": "Seediq"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.358,
+          23.9032
+        ]
+      },
+      "id": "taro1264"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "icon": "data:image/svg+xml;base64,PHN2ZyAgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIgogICAgICB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgaGVpZ2h0PSI0MCIgd2lkdGg9IjQwIj4KICA8Y2lyY2xlIGN4PSIyMCIgY3k9IjIwIiByPSIxNCIgc3R5bGU9ImZpbGw6IzAwMDAwMDtzdHJva2U6YmxhY2s7c3Ryb2tlLXdpZHRoOjFweDtzdHJva2UtbGluZWNhcDpyb3VuZDtzdHJva2UtbGluZWpvaW46cm91bmQ7Ii8+Cjwvc3ZnPg==",
+        "branch": 1769,
+        "language": {
+          "pk": 1769,
+          "name": "Paiwan",
+          "longitude": 120.806,
+          "latitude": 22.3271,
+          "id": "paiw1248"
+        },
+        "name": "Paiwan"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.806,
+          22.3271
+        ]
+      },
+      "id": "paiw1248"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "icon": "data:image/svg+xml;base64,PHN2ZyAgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIgogICAgICB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgaGVpZ2h0PSI0MCIgd2lkdGg9IjQwIj4KICA8cGF0aCBkPSJNOCA4IEgzMiBWMzIgSDggVjgiIHN0eWxlPSJmaWxsOiMwMDAwRkY7c3Ryb2tlOmJsYWNrO3N0cm9rZS13aWR0aDoxcHg7c3Ryb2tlLWxpbmVjYXA6cm91bmQ7c3Ryb2tlLWxpbmVqb2luOnJvdW5kOyIvPgo8L3N2Zz4=",
+        "branch": 1771,
+        "language": {
+          "pk": 1771,
+          "name": "Thao",
+          "longitude": 120.93,
+          "latitude": 23.8333,
+          "id": "thao1240"
+        },
+        "name": "Thao"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.93,
+          23.8333
+        ]
+      },
+      "id": "thao1240"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "icon": "data:image/svg+xml;base64,PHN2ZyAgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIgogICAgICB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgaGVpZ2h0PSI0MCIgd2lkdGg9IjQwIj4KICA8cGF0aCBkPSJNOCA4IEgzMiBWMzIgSDggVjgiIHN0eWxlPSJmaWxsOiMwMDAwRkY7c3Ryb2tlOmJsYWNrO3N0cm9rZS13aWR0aDoxcHg7c3Ryb2tlLWxpbmVjYXA6cm91bmQ7c3Ryb2tlLWxpbmVqb2luOnJvdW5kOyIvPgo8L3N2Zz4=",
+        "branch": 1771,
+        "language": {
+          "pk": 1771,
+          "name": "Babuza",
+          "longitude": 120.585,
+          "latitude": 24.0017,
+          "id": "babu1240"
+        },
+        "name": "Babuza"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.585,
+          24.0017
+        ]
+      },
+      "id": "babu1240"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "icon": "data:image/svg+xml;base64,PHN2ZyAgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIgogICAgICB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgaGVpZ2h0PSI0MCIgd2lkdGg9IjQwIj4KICA8cGF0aCBkPSJNOCA4IEgzMiBWMzIgSDggVjgiIHN0eWxlPSJmaWxsOiMwMDAwRkY7c3Ryb2tlOmJsYWNrO3N0cm9rZS13aWR0aDoxcHg7c3Ryb2tlLWxpbmVjYXA6cm91bmQ7c3Ryb2tlLWxpbmVqb2luOnJvdW5kOyIvPgo8L3N2Zz4=",
+        "branch": 1771,
+        "language": {
+          "pk": 1771,
+          "name": "Papora-Hoanya",
+          "longitude": 120.577,
+          "latitude": 24.324,
+          "id": "papo1239"
+        },
+        "name": "Papora-Hoanya"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.577,
+          24.324
+        ]
+      },
+      "id": "papo1239"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "icon": "data:image/svg+xml;base64,PHN2ZyAgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIgogICAgICB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgaGVpZ2h0PSI0MCIgd2lkdGg9IjQwIj4KICA8cGF0aCBkPSJNOCA4IEgzMiBWMzIgSDggVjgiIHN0eWxlPSJmaWxsOiNGRjAwMDA7c3Ryb2tlOmJsYWNrO3N0cm9rZS13aWR0aDoxcHg7c3Ryb2tlLWxpbmVjYXA6cm91bmQ7c3Ryb2tlLWxpbmVqb2luOnJvdW5kOyIvPgo8L3N2Zz4=",
+        "branch": 1768,
+        "language": {
+          "pk": 1768,
+          "name": "Rukai",
+          "longitude": 120.844,
+          "latitude": 22.7738,
+          "id": "ruka1240"
+        },
+        "name": "Rukai"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.844,
+          22.7738
+        ]
+      },
+      "id": "ruka1240"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "icon": "data:image/svg+xml;base64,PHN2ZyAgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIgogICAgICB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgaGVpZ2h0PSI0MCIgd2lkdGg9IjQwIj4KICA8Y2lyY2xlIGN4PSIyMCIgY3k9IjIwIiByPSIxNCIgc3R5bGU9ImZpbGw6IzAwMDBGRjtzdHJva2U6YmxhY2s7c3Ryb2tlLXdpZHRoOjFweDtzdHJva2UtbGluZWNhcDpyb3VuZDtzdHJva2UtbGluZWpvaW46cm91bmQ7Ii8+Cjwvc3ZnPg==",
+        "branch": 1774,
+        "language": {
+          "pk": 1774,
+          "name": "Sirayaic",
+          "longitude": 120.315,
+          "latitude": 22.9777,
+          "id": "sira1267"
+        },
+        "name": "Sirayaic"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.315,
+          22.9777
+        ]
+      },
+      "id": "sira1267"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "icon": "data:image/svg+xml;base64,PHN2ZyAgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIgogICAgICB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgaGVpZ2h0PSI0MCIgd2lkdGg9IjQwIj4KICA8Y2lyY2xlIGN4PSIyMCIgY3k9IjIwIiByPSIxNCIgc3R5bGU9ImZpbGw6IzAwMDBGRjtzdHJva2U6YmxhY2s7c3Ryb2tlLXdpZHRoOjFweDtzdHJva2UtbGluZWNhcDpyb3VuZDtzdHJva2UtbGluZWpvaW46cm91bmQ7Ii8+Cjwvc3ZnPg==",
+        "branch": 1774,
+        "language": {
+          "pk": 1774,
+          "name": "Basay",
+          "longitude": 121.857,
+          "latitude": 25.0046,
+          "id": "basa1287"
+        },
+        "name": "Basay"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.857,
+          25.0046
+        ]
+      },
+      "id": "basa1287"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "icon": "data:image/svg+xml;base64,PHN2ZyAgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIgogICAgICB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgaGVpZ2h0PSI0MCIgd2lkdGg9IjQwIj4KICA8Y2lyY2xlIGN4PSIyMCIgY3k9IjIwIiByPSIxNCIgc3R5bGU9ImZpbGw6IzAwMDBGRjtzdHJva2U6YmxhY2s7c3Ryb2tlLXdpZHRoOjFweDtzdHJva2UtbGluZWNhcDpyb3VuZDtzdHJva2UtbGluZWpvaW46cm91bmQ7Ii8+Cjwvc3ZnPg==",
+        "branch": 1774,
+        "language": {
+          "pk": 1774,
+          "name": "Kavalan",
+          "longitude": 121.645,
+          "latitude": 24.6947,
+          "id": "kava1241"
+        },
+        "name": "Kavalan"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.645,
+          24.6947
+        ]
+      },
+      "id": "kava1241"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "icon": "data:image/svg+xml;base64,PHN2ZyAgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIgogICAgICB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgaGVpZ2h0PSI0MCIgd2lkdGg9IjQwIj4KICA8Y2lyY2xlIGN4PSIyMCIgY3k9IjIwIiByPSIxNCIgc3R5bGU9ImZpbGw6IzAwMDBGRjtzdHJva2U6YmxhY2s7c3Ryb2tlLXdpZHRoOjFweDtzdHJva2UtbGluZWNhcDpyb3VuZDtzdHJva2UtbGluZWpvaW46cm91bmQ7Ii8+Cjwvc3ZnPg==",
+        "branch": 1774,
+        "language": {
+          "pk": 1774,
+          "name": "Ketangalan",
+          "longitude": 121.425,
+          "latitude": 25.0257,
+          "id": "keta1243"
+        },
+        "name": "Ketangalan"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.425,
+          25.0257
+        ]
+      },
+      "id": "keta1243"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "icon": "data:image/svg+xml;base64,PHN2ZyAgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIgogICAgICB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgaGVpZ2h0PSI0MCIgd2lkdGg9IjQwIj4KICA8Y2lyY2xlIGN4PSIyMCIgY3k9IjIwIiByPSIxNCIgc3R5bGU9ImZpbGw6IzAwMDBGRjtzdHJva2U6YmxhY2s7c3Ryb2tlLXdpZHRoOjFweDtzdHJva2UtbGluZWNhcDpyb3VuZDtzdHJva2UtbGluZWpvaW46cm91bmQ7Ii8+Cjwvc3ZnPg==",
+        "branch": 1774,
+        "language": {
+          "pk": 1774,
+          "name": "Amis",
+          "longitude": 121.348,
+          "latitude": 23.0917,
+          "id": "amis1246"
+        },
+        "name": "Amis"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.348,
+          23.0917
+        ]
+      },
+      "id": "amis1246"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "icon": "data:image/svg+xml;base64,PHN2ZyAgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIgogICAgICB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgaGVpZ2h0PSI0MCIgd2lkdGg9IjQwIj4KICA8Y2lyY2xlIGN4PSIyMCIgY3k9IjIwIiByPSIxNCIgc3R5bGU9ImZpbGw6IzAwMDBGRjtzdHJva2U6YmxhY2s7c3Ryb2tlLXdpZHRoOjFweDtzdHJva2UtbGluZWNhcDpyb3VuZDtzdHJva2UtbGluZWpvaW46cm91bmQ7Ii8+Cjwvc3ZnPg==",
+        "branch": 1774,
+        "language": {
+          "pk": 1774,
+          "name": "Sakizaya",
+          "longitude": 121.531394,
+          "latitude": 24.026316,
+          "id": "saki1247"
+        },
+        "name": "Sakizaya"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.531394,
+          24.026316
+        ]
+      },
+      "id": "saki1247"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "icon": "data:image/svg+xml;base64,PHN2ZyAgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIgogICAgICB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgaGVpZ2h0PSI0MCIgd2lkdGg9IjQwIj4KICA8Y2lyY2xlIGN4PSIyMCIgY3k9IjIwIiByPSIxNCIgc3R5bGU9ImZpbGw6IzAwMDBGRjtzdHJva2U6YmxhY2s7c3Ryb2tlLXdpZHRoOjFweDtzdHJva2UtbGluZWNhcDpyb3VuZDtzdHJva2UtbGluZWpvaW46cm91bmQ7Ii8+Cjwvc3ZnPg==",
+        "branch": 1774,
+        "language": {
+          "pk": 1774,
+          "name": "Tavalong-Vataan",
+          "longitude": 121.422761,
+          "latitude": 23.635064,
+          "id": "tava1241"
+        },
+        "name": "Tavalong-Vataan"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.422761,
+          23.635064
+        ]
+      },
+      "id": "tava1241"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "icon": "data:image/svg+xml;base64,PHN2ZyAgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIgogICAgICB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgaGVpZ2h0PSI0MCIgd2lkdGg9IjQwIj4KICA8Y2lyY2xlIGN4PSIyMCIgY3k9IjIwIiByPSIxNCIgc3R5bGU9ImZpbGw6IzAwMDBGRjtzdHJva2U6YmxhY2s7c3Ryb2tlLXdpZHRoOjFweDtzdHJva2UtbGluZWNhcDpyb3VuZDtzdHJva2UtbGluZWpvaW46cm91bmQ7Ii8+Cjwvc3ZnPg==",
+        "branch": 1774,
+        "language": {
+          "pk": 1774,
+          "name": "Northern Amis",
+          "longitude": 121.59,
+          "latitude": 23.9386,
+          "id": "nata1254"
+        },
+        "name": "Northern Amis"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.59,
+          23.9386
+        ]
+      },
+      "id": "nata1254"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "icon": "data:image/svg+xml;base64,PHN2ZyAgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIgogICAgICB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgaGVpZ2h0PSI0MCIgd2lkdGg9IjQwIj4KICA8cGF0aCBkPSJNOCA4IEgzMiBWMzIgSDggVjgiIHN0eWxlPSJmaWxsOiMwMEZGMDA7c3Ryb2tlOmJsYWNrO3N0cm9rZS13aWR0aDoxcHg7c3Ryb2tlLWxpbmVjYXA6cm91bmQ7c3Ryb2tlLWxpbmVqb2luOnJvdW5kOyIvPgo8L3N2Zz4=",
+        "branch": 1773,
+        "language": {
+          "pk": 1773,
+          "name": "Puyuma",
+          "longitude": 120.996,
+          "latitude": 22.643,
+          "id": "puyu1239"
+        },
+        "name": "Puyuma"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.996,
+          22.643
+        ]
+      },
+      "id": "puyu1239"
+    }
+  ]
+}
