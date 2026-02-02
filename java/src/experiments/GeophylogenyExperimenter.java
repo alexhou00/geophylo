@@ -131,8 +131,8 @@ public class GeophylogenyExperimenter {
 			// // Comment out either set to choose between the author's RW instances and mine
 			//String[] rwFiles = { FILE_RW_FISH, FILE_RW_LIZARD, FILE_RW_FROGS, "EasternBaltic.json"};
 			//double[] rwScales = { RW_SCALE_FISH, RW_SCALE_LIZARD, RW_SCALE_FROGS, 1 };
-			String[] rwFiles = { "Balto-Slavic.json", "Formosan.json"};
-			double[] rwScales = {1, 1};
+			String[] rwFiles = { "Balto-Slavic.json", "Formosan.json", "Formosan_rotate90.json"};
+			double[] rwScales = {1, 1, 1};
 			for (int i = 0; i < rwFiles.length; i++) {
 				String rwFile = rwFiles[i];
 				double rwScale = rwScales[i];

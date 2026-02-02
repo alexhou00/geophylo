@@ -32,13 +32,14 @@ public class GeoJsonToGeophylogenyConverter {
     private static final String BASE_PATH = "D:\\Alex\\TUM\\Seminar\\geophylo\\";
 
     // CHANGE NAME HERE
-    private static final String DND_FILE_NAME = "data/realWorld/Indo-European.dnd";
-    private static final String GEOJSON_FILE_NAME = "data/realWorld/Balto-Slavic.geojson";
-    private static final String OUTPUT_JSON_FILE_NAME = "data/realWorld/Balto-Slavic.json";
-    private static final String TREE_NAME_IN_OUTPUT = "balto-slavic";
+    private static final String DND_FILE_NAME = "data/realWorld/Austronesian.dnd";
+    private static final String GEOJSON_FILE_NAME = "data/realWorld/Formosan.geojson";
+    private static final String OUTPUT_JSON_FILE_NAME = "data/realWorld/Formosan_rotate90.json";
+    private static final String TREE_NAME_IN_OUTPUT = "formosan-rotate90";
 
     private static final int MAP_WIDTH = 800;
     private static final int MAP_HEIGHT = 500;
+    private static final boolean ROTATE_MAP_90 = false; // Rotate 90 deg?
     private static final Pattern TAXON_ID_PATTERN = Pattern.compile("\\[([^\\]]+)\\]");
 
     private record LonLat(double lon, double lat) {}
@@ -311,10 +312,12 @@ public class GeoJsonToGeophylogenyConverter {
         Vertex[] leaves = tree.getLeavesInIndexOrder();
         Site[] sites = new Site[leaves.length];
         List<String> missing = new ArrayList<>();
-        double padX = MAP_WIDTH * 0.10;
-        double padY = MAP_HEIGHT * 0.10;
-        double usableWidth = MAP_WIDTH - 2.0 * padX;
-        double usableHeight = MAP_HEIGHT - 2.0 * padY;
+        double mapWidth = ROTATE_MAP_90 ? MAP_HEIGHT : MAP_WIDTH;
+        double mapHeight = ROTATE_MAP_90 ? MAP_WIDTH : MAP_HEIGHT;
+        double padX = mapWidth * 0.10;
+        double padY = mapHeight * 0.10;
+        double usableWidth = mapWidth - 2.0 * padX;
+        double usableHeight = mapHeight - 2.0 * padY;
         double xRange = bounds.maxX - bounds.minX;
         double yRange = bounds.maxY - bounds.minY;
         double scale = Math.min(usableWidth / xRange, usableHeight / yRange);
@@ -338,6 +341,12 @@ public class GeoJsonToGeophylogenyConverter {
             double mercatorY = latToMercatorY(lonLat.lat);
             double x = padX + extraX + (mercatorX - bounds.minX) * scale;
             double y = padY + extraY + (bounds.maxY - mercatorY) * scale;
+            if (ROTATE_MAP_90) {
+                double flippedY = mapHeight - y;
+                double tmp = x;
+                x = flippedY;
+                y = tmp;
+            }
 
             Site site = new Site(x, y);
             site.setLeaf(leaf);
