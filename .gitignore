@@ -5,3 +5,4 @@ java/geophylo.iml
 output/
 output_serious/
 python/remove_branch_1777.py
+data/generated/
