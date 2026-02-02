@@ -26,6 +26,9 @@ import java.util.regex.Pattern;
 
 public class GeoJsonToGeophylogenyConverter {
 
+    // OMG no one told me that the code with the same function already exists.
+    // it is in the python folder, it parses the tree file and the GeoJSON file, and convert it into a JSON file that this project requires
+
     private static final String BASE_PATH = "D:\\Alex\\TUM\\Seminar\\geophylo\\";
 
     // CHANGE NAME HERE
