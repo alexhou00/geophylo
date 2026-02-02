@@ -29,10 +29,10 @@ public class GeoJsonToGeophylogenyConverter {
     private static final String BASE_PATH = "D:\\Alex\\TUM\\Seminar\\geophylo\\";
 
     // CHANGE NAME HERE
-    private static final String DND_FILE_NAME = "data/realWorld/Austronesian.dnd";
-    private static final String GEOJSON_FILE_NAME = "data/realWorld/Formosan.geojson";
-    private static final String OUTPUT_JSON_FILE_NAME = "data/realWorld/Formosan.json";
-    private static final String TREE_NAME_IN_OUTPUT = "formosan";
+    private static final String DND_FILE_NAME = "data/realWorld/Indo-European.dnd";
+    private static final String GEOJSON_FILE_NAME = "data/realWorld/Balto-Slavic.geojson";
+    private static final String OUTPUT_JSON_FILE_NAME = "data/realWorld/Balto-Slavic.json";
+    private static final String TREE_NAME_IN_OUTPUT = "balto-slavic";
 
     private static final int MAP_WIDTH = 800;
     private static final int MAP_HEIGHT = 500;
@@ -276,30 +276,32 @@ public class GeoJsonToGeophylogenyConverter {
         }
     }
 
-    private record Bounds(double minLon, double maxLon, double minLat, double maxLat) {}
+    private record Bounds(double minX, double maxX, double minY, double maxY) {}
 
     private static Bounds computeBounds(Map<String, LonLat> byId) {
         if (byId.isEmpty()) {
             throw new IllegalStateException("No Point features found in GeoJSON.");
         }
 
-        double minLon = Double.POSITIVE_INFINITY;
-        double maxLon = Double.NEGATIVE_INFINITY;
-        double minLat = Double.POSITIVE_INFINITY;
-        double maxLat = Double.NEGATIVE_INFINITY;
+        double minX = Double.POSITIVE_INFINITY;
+        double maxX = Double.NEGATIVE_INFINITY;
+        double minY = Double.POSITIVE_INFINITY;
+        double maxY = Double.NEGATIVE_INFINITY;
 
         for (LonLat p : byId.values()) {
-            minLon = Math.min(minLon, p.lon);
-            maxLon = Math.max(maxLon, p.lon);
-            minLat = Math.min(minLat, p.lat);
-            maxLat = Math.max(maxLat, p.lat);
+            double x = lonToMercatorX(p.lon);
+            double y = latToMercatorY(p.lat);
+            minX = Math.min(minX, x);
+            maxX = Math.max(maxX, x);
+            minY = Math.min(minY, y);
+            maxY = Math.max(maxY, y);
         }
 
-        if (maxLon == minLon || maxLat == minLat) {
+        if (maxX == minX || maxY == minY) {
             throw new IllegalStateException("GeoJSON points have zero extent (all same lon or lat).");
         }
 
-        return new Bounds(minLon, maxLon, minLat, maxLat);
+        return new Bounds(minX, maxX, minY, maxY);
     }
 
     private static Site[] buildSites(Tree tree, Map<String, LonLat> byId, Bounds bounds) {
@@ -310,11 +312,11 @@ public class GeoJsonToGeophylogenyConverter {
         double padY = MAP_HEIGHT * 0.10;
         double usableWidth = MAP_WIDTH - 2.0 * padX;
         double usableHeight = MAP_HEIGHT - 2.0 * padY;
-        double lonRange = bounds.maxLon - bounds.minLon;
-        double latRange = bounds.maxLat - bounds.minLat;
-        double scale = Math.min(usableWidth / lonRange, usableHeight / latRange);
-        double extraX = (usableWidth - lonRange * scale) / 2.0;
-        double extraY = (usableHeight - latRange * scale) / 2.0;
+        double xRange = bounds.maxX - bounds.minX;
+        double yRange = bounds.maxY - bounds.minY;
+        double scale = Math.min(usableWidth / xRange, usableHeight / yRange);
+        double extraX = (usableWidth - xRange * scale) / 2.0;
+        double extraY = (usableHeight - yRange * scale) / 2.0;
 
         for (int i = 0; i < leaves.length; i++) {
             Vertex leaf = leaves[i];
@@ -329,8 +331,10 @@ public class GeoJsonToGeophylogenyConverter {
                 continue;
             }
 
-            double x = padX + extraX + (lonLat.lon - bounds.minLon) * scale;
-            double y = padY + extraY + (bounds.maxLat - lonLat.lat) * scale;
+            double mercatorX = lonToMercatorX(lonLat.lon);
+            double mercatorY = latToMercatorY(lonLat.lat);
+            double x = padX + extraX + (mercatorX - bounds.minX) * scale;
+            double y = padY + extraY + (bounds.maxY - mercatorY) * scale;
 
             Site site = new Site(x, y);
             site.setLeaf(leaf);
@@ -342,6 +346,18 @@ public class GeoJsonToGeophylogenyConverter {
         }
 
         return sites;
+    }
+
+    private static final double MAX_MERCATOR_LAT = 85.05112878;
+
+    private static double lonToMercatorX(double lonDeg) {
+        return Math.toRadians(lonDeg);
+    }
+
+    private static double latToMercatorY(double latDeg) {
+        double clamped = Math.max(-MAX_MERCATOR_LAT, Math.min(MAX_MERCATOR_LAT, latDeg));
+        double rad = Math.toRadians(clamped);
+        return Math.log(Math.tan(Math.PI / 4.0 + rad / 2.0));
     }
 
     private static Node pruneToGeoIds(Node node, Map<String, String> translate, Map<String, LonLat> byId) {
