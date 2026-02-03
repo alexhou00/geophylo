@@ -1,3 +1,4 @@
+import dotenv
 import numpy as np
 import scipy.sparse as sp
 import gurobipy as gp
@@ -5,13 +6,13 @@ from gurobipy import GRB
 import os
 
 usingLicense = False
-
+dotenv.load_dotenv()
 if (
     (os.getenv("GRB_WLSACCESSID") is not None)
     and (os.getenv("GRB_LICENSEID") is not None)
     and (os.getenv("GRB_WLSSECRET") is not None)
 ):
-    print("usingLicense")
+    print("\nLICENSE INFO: usingLicense\n")
     usingLicense = True
     gurobiEnv = gp.Env(empty=True)
 
@@ -27,9 +28,14 @@ if (
     gurobiEnv.setParam("CSCLIENTLOG", int(3))
 
     gurobiEnv.start()
+else: 
+    print("\nLICENSE INFO: not using license\n")
 
 
 def giveMinLeaderIntersectConfig(self):
+
+
+
     intersectingSitePairs = []
     fixedSitePairs = []
     horizontalSitePairs = []
